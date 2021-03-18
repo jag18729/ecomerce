@@ -9,7 +9,7 @@ const HomePage = () => {
       <h1>Newest Products!</h1>
       <Row>
         {products.map((product) => (
-          <Col sm={12} md={6} lg={4}>
+          <Col key={product._id} sm={12} md={6} lg={4}>
             <Product product={product} />
           </Col>
         ))}
