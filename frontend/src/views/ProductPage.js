@@ -8,7 +8,7 @@ const ProductPage = ({ match }) => {
   const product = products.find((p) => p._id === match.params.id)
   return (
     <>
-      <Link className='btn btn-light my-3' to="/">Go Back</Link>
+      <Link className='btn btn-light my-3' to="/"><i class="fas fa-backward">  Back</i></Link>
       <Row>
         <Col md={6}>
           <Image src={product.image} alt={product.name} fluid />
@@ -51,7 +51,7 @@ const ProductPage = ({ match }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button className="btn-block" type="button" disabled={product.countInStock === 0}>
-                  Add to Cart</Button>
+                  <i class="fas fa-cart-plus" > Add to Cart</i></Button>
               </ListGroup.Item>
             </ListGroup>
           </Card>
