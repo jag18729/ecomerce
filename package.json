@@ -1,0 +1,23 @@
+{
+  "name": "ecomerce",
+  "version": "1.0.0",
+  "description": "Ecommerce website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjgarcia299/ecommerce.git"
+  },
+  "keywords": [],
+  "author": "Rafael Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjgarcia299/ecommerce/issues"
+  },
+  "homepage": "https://github.com/rjgarcia299/ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
