@@ -14,17 +14,18 @@ router.get('/', asyncHandler(async (req, res) => {
 
 //@desc Fetch single product
 //@route GET /api/product
-router.get('/:id', (req, res) => {
-  const product = product.findById(req.params.id)
+router.get(
+  '/:id',
+  asyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id)
 
-  if (product) {
-    res.json(product)
-  } else {
-    res.status(400).json({ message: 'Product not found' })
-  }
-
-  res.json(product)
-})
+    if (product) {
+      res.json(product)
+    } else {
+      res.status(400).json({ message: 'Product not found' })
+    }
+  })
+)
 
 
 export default router
