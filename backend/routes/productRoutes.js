@@ -6,11 +6,13 @@ import Product from '../models/productModel.js'
 //@desc Fetch all products
 //@route GET /api/products
 //@access Public
-router.get('/', asyncHandler(async (req, res) => {
-  const products = await Product.find({})
+router.get(
+  '/',
+  asyncHandler(async (req, res) => {
+    const products = await Product.find({})
 
-  res.json(products)
-}))
+    res.json(products)
+  }))
 
 //@desc Fetch single product
 //@route GET /api/product
