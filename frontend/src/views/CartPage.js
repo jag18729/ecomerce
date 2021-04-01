@@ -5,8 +5,7 @@ import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
-
-const CartPage = ({ match, location, history }) => {
+const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id
 
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
@@ -25,22 +24,22 @@ const CartPage = ({ match, location, history }) => {
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
   }
+
   const checkoutHandler = () => {
-    history.push('login?redirect=shipping')
+    history.push('/login?redirect=shipping')
   }
+
   return (
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
-          <Message>Your cart is empty! Click
-            <Link
-              to='/'>here
-          </Link>, to go back.
+          <Message>
+            Your cart is empty <Link to='/'>Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
-            {cartItems.map(item => (
+            {cartItems.map((item) => (
               <ListGroup.Item key={item.product}>
                 <Row>
                   <Col md={2}>
@@ -49,14 +48,16 @@ const CartPage = ({ match, location, history }) => {
                   <Col md={3}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>{item.price}</Col>
+                  <Col md={2}>${item.price}</Col>
                   <Col md={2}>
                     <Form.Control
                       as='select'
                       value={item.qty}
                       onChange={(e) =>
-                        dispatch(addToCart(item.product,
-                          Number(e.target.value)))}
+                        dispatch(
+                          addToCart(item.product, Number(e.target.value))
+                        )
+                      }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -85,7 +86,7 @@ const CartPage = ({ match, location, history }) => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, Number(0))})
+                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items
               </h2>
               $
@@ -109,4 +110,5 @@ const CartPage = ({ match, location, history }) => {
     </Row>
   )
 }
-export default CartPage
+
+export default CartScreen
