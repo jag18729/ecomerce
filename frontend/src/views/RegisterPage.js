@@ -35,7 +35,6 @@ const RegisterPage = ({ location, history }) => {
     } else {
       dispatch(register(name, email, password))
     }
-    dispatch(register(name, email, password))
   }
 
   return (
@@ -72,7 +71,10 @@ const RegisterPage = ({ location, history }) => {
             placeholder='Enter password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></Form.Control>
+          >
+            <Form.Text id="passwordHelpInline" muted>
+              Must be 8-20 characters long.
+        </Form.Text></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='confirmPassword'>
