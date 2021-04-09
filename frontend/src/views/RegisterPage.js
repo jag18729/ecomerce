@@ -4,7 +4,6 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { login } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
 import { register } from '../actions/userActions'
 
@@ -30,7 +29,7 @@ const RegisterPage = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    if ((password != confirmPassword)) {
+    if ((password !== confirmPassword)) {
       setMessage('Passwords must match!')
     } else {
       dispatch(register(name, email, password))
@@ -71,10 +70,7 @@ const RegisterPage = ({ location, history }) => {
             placeholder='Enter password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          >
-            <Form.Text id="passwordHelpInline" muted>
-              Must be 8-20 characters long.
-        </Form.Text></Form.Control>
+          ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='confirmPassword'>
