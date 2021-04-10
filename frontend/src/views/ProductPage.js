@@ -12,7 +12,7 @@ const ProductPage = ({ history, match }) => {
 
   const dispatch = useDispatch()
 
-  const productDetails = useSelector(state => state.productDetails)
+  const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
 
   useEffect(() => {

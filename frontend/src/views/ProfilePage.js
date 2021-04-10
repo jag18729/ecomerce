@@ -51,7 +51,7 @@ const ProfilePage = ({ location, history }) => {
         <h1>User Profile</h1>
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
-        {success && <Message variant='success'>{success}Information updated!</Message>}
+        {success && <Message variant='success'>Information updated!</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='name'>
