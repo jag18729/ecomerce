@@ -12,13 +12,14 @@ import ProfilePage from './views/ProfilePage'
 import ShippingPage from './views/ShippingPage'
 import PaymentPage from './views/PaymentPage'
 import PlaceOrderPage from './views/PlaceOrderPage'
-
+import OrderPage from './views/OrderPage'
 const App = () => {
   return (
     <Router>
       <Header />
       <main className="py-3">
         <Container>
+          <Route path="/order/:id" component={OrderPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/register" component={RegisterPage} />
