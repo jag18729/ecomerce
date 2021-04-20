@@ -13,16 +13,16 @@ const OrderPage = ({ match }) => {
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
 
-  if (!order) {
-    //   Calculate prices
-    const addDecimals = (num) => {
-      return (Math.round(num * 100) / 100).toFixed(2)
-    }
+  // if (!loading) {
+  //   //   Calculate prices
+  //   const addDecimals = (num) => {
+  //     return (Math.round(num * 100) / 100).toFixed(2)
+  //   }
 
-    order.itemsPrice = addDecimals(
-      order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
-    )
-  }
+  //   order.itemsPrice = addDecimals(
+  //     order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+  //   )
+  // }
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId))
@@ -35,19 +35,31 @@ const OrderPage = ({ match }) => {
   ) : (
     <>
       <h1>Order {order._id}</h1>
-      <Row>
+      {/* <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>Shipping</h2>
-              <strong>Name: </strong> {order.user.name}
-              <p><a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
+              <p>
+                <strong>Name: </strong> {order.user.name}
+              </p>
+              <p>
+                <strong>Email: </strong>{' '}
+                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+              </p>
               <p>
                 <strong>Address:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
               </p>
+              {order.isDelivered ? (
+                <Message variant='success'>
+                  Delivered on {order.deliveredAt}
+                </Message>
+              ) : (
+                <Message variant='danger'>Not Delivered</Message>
+              )}
             </ListGroup.Item>
 
             <ListGroup.Item>
@@ -122,7 +134,7 @@ const OrderPage = ({ match }) => {
             </ListGroup>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
     </>
   )
 }

@@ -7,10 +7,11 @@ const Loader = () => {
       animation='border'
       role='status'
       style={{
-        with: '100px',
-        height: '100px',
+        with: '200px',
+        height: '200px',
         margin: 'auto',
         display: 'block',
+        color: 'black'
       }}
     >
       <span className='sr-only'>Loading...</span>
