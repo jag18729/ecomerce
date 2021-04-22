@@ -109,7 +109,7 @@ const OrderPage = ({ match }) => {
               {order.isPaid ? (
                 <Message variant='success'>Paid on {order.paidAt}</Message>
               ) : (
-                <Message variant='danger'>Not paid</Message>
+                <Message variant='danger'>Not Paid</Message>
               )}
             </ListGroup.Item>
 
