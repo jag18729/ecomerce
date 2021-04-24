@@ -13,6 +13,7 @@ import ShippingPage from './views/ShippingPage'
 import PaymentPage from './views/PaymentPage'
 import PlaceOrderPage from './views/PlaceOrderPage'
 import OrderPage from './views/OrderPage'
+import UserListPage from './views/UserListPage'
 const App = () => {
   return (
     <Router>
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/order/:id" component={OrderPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
+          <Route path="/admin/userlist" component={UserListPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/shipping" component={ShippingPage} />
           <Route path="/payment" component={PaymentPage} />
