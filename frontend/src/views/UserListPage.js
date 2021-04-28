@@ -29,7 +29,6 @@ const UserListPage = ({ history }) => {
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
       dispatch(deleteUser(id))
-      console.log('deleteHandler triggred')
     }
   }
 
