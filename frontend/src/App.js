@@ -14,6 +14,8 @@ import PaymentPage from './views/PaymentPage'
 import PlaceOrderPage from './views/PlaceOrderPage'
 import OrderPage from './views/OrderPage'
 import UserListPage from './views/UserListPage'
+import UserEditPage from './views/UserEditPage'
+
 const App = () => {
   return (
     <Router>
@@ -24,6 +26,7 @@ const App = () => {
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/admin/userlist" component={UserListPage} />
+          <Route path="/admin/user/:id/edit" component={UserEditPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/shipping" component={ShippingPage} />
           <Route path="/payment" component={PaymentPage} />
