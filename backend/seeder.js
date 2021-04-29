@@ -1,11 +1,11 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import users from './data/users.js'
 import products from './data/products.js'
 import User from './models/userModel.js'
 import Product from './models/productModel.js'
-import Order from './models/oderModel.js'
+import Order from './models/orderModel.js'
 import connectDB from './config/db.js'
 
 dotenv.config()
@@ -42,12 +42,11 @@ const destroyData = async () => {
     await Product.deleteMany()
     await User.deleteMany()
 
-    console.log('Data Destroyed'.red.inverse)
+    console.log('Data Destroyed!'.red.inverse)
     process.exit()
   } catch (error) {
-    console.log(`${error}`.red.inverse)
+    console.error(`${error}`.red.inverse)
     process.exit(1)
-
   }
 }
 
