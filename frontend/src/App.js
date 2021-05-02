@@ -13,6 +13,7 @@ import ShippingPage from './views/ShippingPage'
 import PaymentPage from './views/PaymentPage'
 import PlaceOrderPage from './views/PlaceOrderPage'
 import OrderPage from './views/OrderPage'
+import OrderListPage from './views/OrderListPage'
 import UserListPage from './views/UserListPage'
 import UserEditPage from './views/UserEditPage'
 import ProductListPage from './views/ProductListPage'
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/payment" component={PaymentPage} />
           <Route path="/placeOrder" component={PlaceOrderPage} />
           <Route path="/admin/productlist" component={ProductListPage} />
+          <Route path="/admin/orderlist" component={OrderListPage} />
           <Route path="/admin/product/:id/edit" component={ProductEditPage} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
