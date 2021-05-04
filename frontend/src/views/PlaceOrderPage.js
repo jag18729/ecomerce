@@ -136,7 +136,7 @@ const PlaceOrderPage = ({ history }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button type="button"
-                  class="btn-block" variant="success" disabled={cart.cartItems === 0}
+                  className="btn-block" variant="success" disabled={cart.cartItems === 0}
                   block onClick={placeOrderHandler}>Confirm Order</Button>
               </ListGroup.Item>
             </ListGroup>
