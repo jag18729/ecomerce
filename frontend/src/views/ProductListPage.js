@@ -53,6 +53,7 @@ const ProductListPage = ({ history, match }) => {
     history,
     userInfo,
     successDelete,
+    successCreate,
     createdProduct,
     pageNumber
   ])
