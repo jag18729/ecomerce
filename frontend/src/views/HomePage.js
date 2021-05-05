@@ -5,6 +5,7 @@ import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
+import ProductCarousel from '../components/ProductCarousel'
 import { listProducts } from '../actions/productActions'
 
 const HomePage = ({match}) => {
@@ -14,7 +15,7 @@ const HomePage = ({match}) => {
 
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
+  const productList = useSelector((state) => state.productList)
   const { loading, error, products, page, pages } = productList
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const HomePage = ({match}) => {
 
   return (
     <>
+    {!keyword && <ProductCarousel /> } 
       <h1>Newest Products!</h1>
       {loading ? (
         <Loader />
