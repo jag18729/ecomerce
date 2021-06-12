@@ -18,12 +18,27 @@ h2{
   font-size: 1.4rem;
   padding: 0.5rem 0;
 }
+
+.bg-dark {
+  background-color: #000000!important;
+}
+
 #proshopHead{
   font-family: 'Zen Dots', cursive;
   font-size: medium;
   color: white;
   font-weight: lighter;
   font-size:large
+}
+#logo{
+  width:175px;
+}
+
+
+/* Search Icon */
+
+#search-icon{
+  border-radius:1px
 }
 
 /* carousel */
